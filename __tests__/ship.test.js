@@ -20,5 +20,15 @@ describe ('Ship', () => {
       ship.setSail();
       expect(ship.currentPort).toBeFalsy();
   })
+
+  it ('can dock at a different port', () => {
+      const dover = new Port('dover');
+      const ship = new Ship(dover);
+      
+      const calais = new Port('calais');
+      ship.dock(calais);
+
+      expect(ship.currentPort).toBe(calais);
+  });
 });
 
