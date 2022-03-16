@@ -25,10 +25,12 @@ describe ('Ship', () => {
       const itinerary = new Itinerary([dover, calais]);
       const ship = new Ship(itinerary);
 
+
       ship.setSail();
 
       expect(ship.currentPort).toBeFalsy();
       expect(ship.previousPort).toBe(dover);
+      expect(dover.ships).not.toContain(ship);
   })
 
   it ('can dock at a different port', () => {
@@ -41,6 +43,7 @@ describe ('Ship', () => {
     ship.dock();
 
     expect(ship.currentPort).toBe(calais);
+    expect(calais.ships).toContain(ship);
 
   });
 
