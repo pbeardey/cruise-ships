@@ -10,7 +10,7 @@
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Itinerary;
     } else {
-        window.Controller = Itinerary;
+        window.Itinerary = Itinerary;
     };
 
 
