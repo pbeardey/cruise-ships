@@ -1,18 +1,26 @@
-class Port {
-    constructor (name) {
-        this.name = name;
-        this.ships = [];
-    }
+(function Port () {
+    
+    class Port {
+        constructor (name) {
+            this.name = name;
+            this.ships = [];
+        }
+    
+        addShip(ship) {
+            this.ships.push(ship);
+        }
+    
+        removeShip(ship) {
+            const index = this.ships.indexOf(ship);
+            this.ships.splice(index);
+        }
+    };
 
-    addShip(ship) {
-        this.ships.push(ship);
-    }
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = Port;
+    } else {
+        window.Port = Port;
+    };
 
-    removeShip(ship) {
-        const index = this.ships.indexOf(ship);
-        this.ships.splice(index);
-    }
-}
+} ());
 
-
-module.exports = Port;
