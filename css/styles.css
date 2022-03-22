@@ -35,3 +35,17 @@ body {
     width: 128px;
     height: 64px;
 }
+
+#sailbutton {
+    font-family: 'Press Start 2P';
+    border: 0px;
+    background-color: #FB3640;
+    border-bottom: 4px solid #d8040f75;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}

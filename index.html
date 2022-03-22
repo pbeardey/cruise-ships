@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -16,6 +19,7 @@
         </div>
         <div id="ship">
         </div>
+        <button id="sailbutton">Set Sail!</button>
     </div>
 
   <script src="src/controller.js"> </script>
@@ -23,15 +27,15 @@
   <script src="src/ship.js"></script>
   <script src="src/itinerary.js"></script>
   <script>
-      const controller = new Controller();
       const dover = new Port('Dover');
       const calais = new Port('Calais');
       const stmalo = new Port('St Malo');
       const rotterdam = new Port('Rotterdam');
       const itinerary = new Itinerary([dover, calais, stmalo, rotterdam]);
       const ship = new Ship(itinerary);
+      const controller = new Controller(ship);
       controller.renderPorts(itinerary.ports);
-      controller.renderShip(ship);
+      controller.renderShip();
 
   </script>
 
