@@ -5,8 +5,24 @@ html, body {
 body {
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#headsup {
+    font-family: 'Courier New';
+    position: relative;
+    color: white;
+    text-align: left;
+    padding: 40px;
+    width: 640px;
+}
+
+#headsup > .hud-text {
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
 }
 
 #viewport {

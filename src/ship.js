@@ -6,7 +6,6 @@
             this.currentPort = this.itinerary.ports[0];
             this.previousPort = null;
             this.currentPort.addShip(this);
-            
         }
     
         setSail() {
@@ -20,7 +19,8 @@
             this.previousPort = this.currentPort;
             this.currentPort = null;
             this.previousPort.removeShip(this);
-             
+         
+            
         }
     
         dock(port) {
@@ -29,6 +29,14 @@
             this.currentPort = itinerary.ports[previousPortIndex + 1];
             this.currentPort.addShip(this);
             controller.renderMessage(`Ship has arrived at ${this.currentPort.name}`)
+            
+            //render Head Up display with current port and next port
+            if (previousPortIndex + 2 < itinerary.ports.length) {
+                const nextPort = itinerary.ports[previousPortIndex + 2]
+                controller.renderHeadsUp(this.currentPort, nextPort);
+            } else {
+                controller.renderHeadsUp(this.currentPort);
+            }
         }
     }
     
